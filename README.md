@@ -1,10 +1,19 @@
-# Felix Send Money Agent
-
+<img width="902" height="1084" alt="Screenshot 2026-04-05 at 12 09 07 PM" src="https://github.com/user-attachments/assets/746646b2-d5e6-4ea3-9f93-fece5f35c119" /># Send Money Agent
 An AI-powered cross-border remittance agent that **detects transfer intent from natural conversation** and orchestrates the entire send-money flow — from slot extraction to safety checks to receipt generation — all within a WhatsApp-style chat interface.
 
 Built with Google ADK (Agent Development Kit) multi-agent architecture and OpenAI GPT-4o-mini.
 
-![Demo](https://img.shields.io/badge/status-demo-green) ![Python](https://img.shields.io/badge/python-3.11+-blue) ![License](https://img.shields.io/badge/license-MIT-gray)
+---
+## Demo
+- Identifies transfer intent and the transfer window pops up
+  <img width="902" height="1084" alt="Screenshot 2026-04-05 at 12 09 07 PM" src="https://github.com/user-attachments/assets/c8efe223-9d8a-414b-838d-d8708b1df9fe" />
+- Autofills info from conversation
+  <img width="902" height="1084" alt="Screenshot 2026-04-05 at 12 10 03 PM" src="https://github.com/user-attachments/assets/13570d0d-0a65-4b81-a767-48af541aaf9e" />
+- Manual edition suppported too
+  <img width="902" height="1084" alt="Screenshot 2026-04-05 at 12 19 51 PM" src="https://github.com/user-attachments/assets/af8e3d8d-665b-42a4-bb19-ca9c2b31ea02" />
+- Send money agent will not pop up for daily conversation
+  <img width="902" height="1084" alt="Screenshot 2026-04-05 at 12 20 34 PM" src="https://github.com/user-attachments/assets/1c6a4a0f-1ad0-469f-bb6e-1029ec2ebd09" />
+
 
 ---
 
