@@ -6,9 +6,10 @@ Built with Google ADK (Agent Development Kit) multi-agent architecture and OpenA
 ---
 ## Demo
 - How to run:
+```bash
 source .venv/bin/activate
-
 uvicorn main:app --host 0.0.0.0 --port 8001 --reload
+```
 - Identifies transfer intent and the transfer window pops up
   <img width="902" height="1084" alt="Screenshot 2026-04-05 at 12 09 07 PM" src="https://github.com/user-attachments/assets/c8efe223-9d8a-414b-838d-d8708b1df9fe" />
 - Autofills info from conversation
