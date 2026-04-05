@@ -192,13 +192,6 @@ Open **http://localhost:8001** in your browser.
 5. **Maria sends**: _"can you send me additional 800"_
 6. **New card appears** with $800 (independent — NOT $1000)
 
-### Pre-loaded Contacts
-
-| Name | Relationship | Country | Delivery | Trusted |
-|------|-------------|---------|----------|---------|
-| Maria | Mother | Mexico 🇲🇽 | Cash Pickup | Yes (12 transfers) |
-| Ana | Sister | Mexico 🇲🇽 | Mobile Wallet | Yes (4 transfers) |
-| Carlos | Friend | Colombia 🇨🇴 | Cash Pickup | No (new recipient) |
 
 ### Supported Countries
 
