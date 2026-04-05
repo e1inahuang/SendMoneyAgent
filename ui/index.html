@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Felix — Send Money Demo</title>
+  <link rel="stylesheet" href="/static/style.css?v=6" />
+</head>
+<body>
+
+  <!-- ── App shell ─────────────────────────────────────────────────────────── -->
+  <div class="app">
+
+    <!-- Top demo label -->
+    <div class="demo-topbar">
+      <span class="demo-label">Felix Send Money Agent — Demo</span>
+      <div class="felix-banner" id="felix-banner">
+        <span class="felix-dot" id="felix-dot"></span>
+        <span class="felix-label">Felix AI</span>
+        <span class="felix-status" id="felix-status">standing by</span>
+      </div>
+    </div>
+
+    <!-- ── Two phones ──────────────────────────────────────────────────────── -->
+    <div class="phones">
+
+      <!-- LEFT: User's phone -->
+      <div class="phone-wrapper">
+      <div class="phone-owner-label">YOUR PHONE 🇺🇸</div>
+      <div class="phone" id="phone-user">
+        <div class="phone-notch"></div>
+
+        <!-- WhatsApp header -->
+        <div class="wa-header">
+          <div class="wa-back">‹</div>
+          <div class="wa-avatar" style="background:#e91e8c">M</div>
+          <div class="wa-info">
+            <div class="wa-name">Maria <span class="flag">🇲🇽</span></div>
+            <div class="wa-sub" id="user-header-sub">online</div>
+          </div>
+          <!-- Felix subtle indicator -->
+          <div class="felix-chip" id="felix-chip">
+            <span class="chip-dot"></span> Felix
+          </div>
+        </div>
+
+        <!-- Who-is-this strip -->
+        <div class="owner-strip owner-you">👤 YOUR VIEW — chatting with Maria</div>
+
+        <!-- Chat -->
+        <div class="wa-chat" id="user-chat"></div>
+
+        <!-- Transfer form card (replaces Felix chat overlay) -->
+        <div class="transfer-card" id="transfer-card">
+          <div class="tc-header">
+            <div class="tc-title"><span class="tc-icon">✦</span> Send Money</div>
+            <button class="tc-cancel" id="tc-cancel-btn">Cancel</button>
+          </div>
+          <div class="tc-fields" id="tc-fields">
+            <div class="tc-field" id="tf-recipient_name" data-slot="recipient_name">
+              <span class="tc-label">To</span>
+              <span class="tc-value">—</span>
+              <span class="tc-check"></span>
+            </div>
+            <div class="tc-field" id="tf-destination_country" data-slot="destination_country">
+              <span class="tc-label">Country</span>
+              <span class="tc-value">—</span>
+              <span class="tc-check"></span>
+            </div>
+            <div class="tc-field" id="tf-amount_usd" data-slot="amount_usd">
+              <span class="tc-label">Amount</span>
+              <span class="tc-value">—</span>
+              <span class="tc-check"></span>
+            </div>
+            <div class="tc-field" id="tf-delivery_method" data-slot="delivery_method">
+              <span class="tc-label">Delivery</span>
+              <span class="tc-value">—</span>
+              <span class="tc-check"></span>
+            </div>
+            <div class="tc-field" id="tf-recipient_contact" data-slot="recipient_contact">
+              <span class="tc-label">Contact</span>
+              <span class="tc-value">—</span>
+              <span class="tc-check"></span>
+            </div>
+          </div>
+          <div class="tc-progress" id="tc-progress">0 / 5 fields</div>
+          <div class="tc-footer">
+            <button class="tc-send-btn" id="tc-send-btn" disabled>Send Money</button>
+          </div>
+        </div>
+
+        <!-- Input -->
+        <div class="wa-input" id="user-input-bar">
+          <div class="input-wrap">
+            <input id="user-input" type="text" placeholder="Message…" autocomplete="off" />
+          </div>
+          <button class="send-btn" id="user-send-btn">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"/></svg>
+          </button>
+        </div>
+
+        <!-- Phone label -->
+        <div class="phone-label">You (child) 🇺🇸</div>
+      </div><!-- end phone-user -->
+      </div><!-- end phone-wrapper -->
+
+
+      <!-- CENTER: Connection line with Felix badge -->
+      <div class="center-column">
+        <div class="connection-line"></div>
+        <div class="felix-center-badge" id="felix-center-badge">
+          <div class="fcb-icon">✦</div>
+          <div class="fcb-name">Felix</div>
+          <div class="fcb-sub">AI Agent</div>
+        </div>
+        <div class="connection-line"></div>
+      </div>
+
+
+      <!-- RIGHT: Mom's phone -->
+      <div class="phone-wrapper">
+      <div class="phone-owner-label">MARIA'S PHONE 🇲🇽</div>
+      <div class="phone" id="phone-mom">
+        <div class="phone-notch"></div>
+
+        <!-- WhatsApp header -->
+        <div class="wa-header">
+          <div class="wa-back">‹</div>
+          <div class="wa-avatar" style="background:#5c6bc0">U</div>
+          <div class="wa-info">
+            <div class="wa-name">My child <span class="flag">🇺🇸</span></div>
+            <div class="wa-sub">online</div>
+          </div>
+        </div>
+
+        <!-- Who-is-this strip -->
+        <div class="owner-strip owner-maria">👤 MARIA'S VIEW — chatting with you</div>
+
+        <!-- Chat (mirrored view) -->
+        <div class="wa-chat" id="mom-chat"></div>
+
+        <!-- Input -->
+        <div class="wa-input">
+          <div class="input-wrap">
+            <input id="mom-input" type="text" placeholder="Type as Maria…" autocomplete="off" />
+          </div>
+          <button class="send-btn" id="mom-send-btn">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"/></svg>
+          </button>
+        </div>
+
+        <!-- Phone label -->
+        <div class="phone-label">Maria (Mom) 🇲🇽</div>
+      </div><!-- end phone-mom -->
+      </div><!-- end phone-wrapper -->
+
+    </div><!-- end .phones -->
+
+  </div><!-- end .app -->
+
+  <script src="/static/app.js?v=6"></script>
+</body>
+</html>
