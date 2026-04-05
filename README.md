@@ -1,10 +1,13 @@
-<img width="902" height="1084" alt="Screenshot 2026-04-05 at 12 09 07 PM" src="https://github.com/user-attachments/assets/746646b2-d5e6-4ea3-9f93-fece5f35c119" /># Send Money Agent
+# Send Money Agent
 An AI-powered cross-border remittance agent that **detects transfer intent from natural conversation** and orchestrates the entire send-money flow — from slot extraction to safety checks to receipt generation — all within a WhatsApp-style chat interface.
 
 Built with Google ADK (Agent Development Kit) multi-agent architecture and OpenAI GPT-4o-mini.
 
 ---
 ## Demo
+- How to run:
+source .venv/bin/activate
+uvicorn main:app --host 0.0.0.0 --port 8001 --reload
 - Identifies transfer intent and the transfer window pops up
   <img width="902" height="1084" alt="Screenshot 2026-04-05 at 12 09 07 PM" src="https://github.com/user-attachments/assets/c8efe223-9d8a-414b-838d-d8708b1df9fe" />
 - Autofills info from conversation
